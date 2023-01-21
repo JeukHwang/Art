@@ -1,0 +1,19 @@
+lockfileVersion: 5.4
+
+specifiers:
+  planck-js: ^0.3.31
+
+dependencies:
+  planck-js: 0.3.31
+
+packages:
+
+  /planck-js/0.3.31:
+    resolution: {integrity: sha512-fwKYnL92pF2nXdMPeBq/Aipu+m8LztcEcNjdcrQm/sWKDR01Ej0g121KS1oO7NW23WnRzxw24a7V4KI2JlFpSg==}
+    dependencies:
+      stage-js: 0.9.4
+    dev: false
+
+  /stage-js/0.9.4:
+    resolution: {integrity: sha512-fNN6rkYD55T4NUxJE71hixXYS9DoyHVX5S8sQcq5yiozX1kqHP/wnByZwFfdAGNZjb5rROJ90zwb0EbM9U2Jqg==}
+    dev: false
