@@ -73,14 +73,14 @@ const sketch = (p5) => {
     p5.setup = () => {
         p5.createCanvas(render.width * render.block, render.height * render.block);
         p5.frameRate(render.fps);
-        p5.noStroke();
-        p5.pixelDensity(p5.displayDensity());
+        // p5.pixelDensity(p5.displayDensity());
     };
     p5.draw = () => {
         p5.background(`#${render.palette[0]}`);
         [...Array(render.width).keys()].forEach(i => {
             [...Array(render.height).keys()].forEach(j => {
                 p5.fill(system.getLevel(i, j));
+                p5.stroke(system.getLevel(i, j));
                 p5.rect(i * render.block, j * render.block, render.block, render.block);
             });
         });
@@ -93,6 +93,4 @@ const sketch = (p5) => {
     };
 };
 
-window.onload = () => {
-    const canvas = new p5(sketch);
-};
+const canvas = new p5(sketch);
