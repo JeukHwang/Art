@@ -1,6 +1,6 @@
 export const render = {
     fps: 20,
-    width: 15, height: 15, block: 20,
+    width: 15, height: 15, block: 30,
     palette: [
         "888888", // bg
         "D8F3DC", "B7E4C7", "95D5B2",

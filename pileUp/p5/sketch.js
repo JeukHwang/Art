@@ -70,12 +70,15 @@ class System {
 
 const sketch = (p5) => {
     const system = new System();
+    const capturer = new CCapture({ format: 'webm', framerate: render.fps });
+
     p5.setup = () => {
         p5.createCanvas(render.width * render.block, render.height * render.block);
         p5.frameRate(render.fps);
         // p5.pixelDensity(p5.displayDensity());
     };
     p5.draw = () => {
+        if (p5.frameCount === 1) { capturer.start(); }
         p5.background(`#${render.palette[0]}`);
         [...Array(render.width).keys()].forEach(i => {
             [...Array(render.height).keys()].forEach(j => {
@@ -86,8 +89,11 @@ const sketch = (p5) => {
         });
         system.update();
         system.addParticle(5);
+        capturer.capture(document.getElementById('defaultCanvas0'));
         if (system.isStable()) {
             p5.noLoop();
+            capturer.stop();
+            capturer.save();
             console.log("Animation is finished");
         }
     };
