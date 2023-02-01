@@ -133,7 +133,7 @@ const sketch = (p5) => {
         width: null, height: null,
         fps: physics_.fps,
         asset: null, sleep_body_info: null,
-        graphics: {}, useImage : true
+        graphics: {}, useImage: true
     };
     render_.width = render_.convert.length(physics_.width);
     render_.height = render_.convert.length(physics_.height);
