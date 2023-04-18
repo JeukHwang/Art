@@ -16,6 +16,9 @@ body {
 }
 
 #p5 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     max-height: 0px;
     overflow: hidden;
 }
