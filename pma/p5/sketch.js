@@ -1,7 +1,10 @@
 import { render } from "./constant.js";
 
 const sketch = (p5) => {
-    const scale = p5.windowHeight / render.height * 0.8;
+    const scale = Math.min(
+        p5.windowHeight / render.height * 0.8,
+        p5.windowWidth / render.width * 0.9
+    );
     const width = render.width * scale;
     const height = render.height * scale;
     let image;
