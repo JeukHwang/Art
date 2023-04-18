@@ -14,7 +14,8 @@ const sketch = (p5) => {
         image.resize(width, height);
     };
     p5.setup = () => {
-        p5.createCanvas(width, height);
+        const canvas = p5.createCanvas(width, height);
+        canvas.parent(document.getElementById("p5"));
         p5.frameRate(60);
         p5.pixelDensity(p5.displayDensity());
 
