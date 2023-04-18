@@ -48,7 +48,7 @@ const sketch = (p5) => {
             return pythagoras(pos.x - history[i - 1].x, pos.y - history[i - 1].y);
         }));
         const diagonal = pythagoras(width, height);
-        const radius = diagonal - p5.map(distance, 0, render.maxPossibleDistance, 0, diagonal, true);
+        const radius = diagonal - p5.map(distance, 0, scale*render.maxPossibleDistance, 0, diagonal, true);
 
         mask.clear();
         mask.circle(pos.x, pos.y, 2 * radius);
