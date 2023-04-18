@@ -1,8 +1,9 @@
 import { render } from "./constant.js";
 
 const sketch = (p5) => {
-    const width = render.width * render.scale;
-    const height = render.height * render.scale;
+    const scale = p5.windowHeight / render.height * 0.8;
+    const width = render.width * scale;
+    const height = render.height * scale;
     let image;
     let image_blur;
     let image_blur_masked;
