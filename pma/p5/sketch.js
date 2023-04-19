@@ -14,8 +14,7 @@ const sketch = (p5) => {
     let history = [{ x: width / 2, y: height / 2 }];
 
     p5.preload = () => {
-        image = p5.loadImage("../data/wally.jpg");
-        image.resize(width, height);
+        image = p5.loadImage("../data/jeuk.png");
     };
     p5.setup = () => {
         const canvas = p5.createCanvas(width, height);
