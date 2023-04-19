@@ -1,12 +1,12 @@
 import { render } from "./constant.js";
 
 const sketch = (p5) => {
-    const scale = Math.min(
+    let scale = Math.min(
         p5.windowHeight / render.height * 0.8,
         p5.windowWidth / render.width * 0.9
     );
-    const width = render.width * scale;
-    const height = render.height * scale;
+    let width = render.width * scale;
+    let height = render.height * scale;
     let image;
     let image_blur;
     let image_blur_masked;
@@ -23,6 +23,7 @@ const sketch = (p5) => {
         p5.frameRate(60);
         p5.pixelDensity(p5.displayDensity());
 
+        image.resize(width, height);
         image_blur = p5.createImage(width, height);
         image_blur.copy(image, 0, 0, width, height, 0, 0, width, height);
         image_blur.filter(p5.BLUR, render.blur);
@@ -56,6 +57,20 @@ const sketch = (p5) => {
         image_blur_masked.mask(mask);
         p5.image(image, 0, 0);
         p5.image(image_blur_masked, 0, 0);
+    };
+    p5.windowResized = () => {
+        scale = Math.min(
+            p5.windowHeight / render.height * 0.8,
+            p5.windowWidth / render.width * 0.9
+        );
+        width = render.width * scale;
+        height = render.height * scale;
+        image.resize(width, height);
+        image_blur = p5.createImage(width, height);
+        image_blur.copy(image, 0, 0, width, height, 0, 0, width, height);
+        image_blur.filter(p5.BLUR, render.blur);
+        image_blur_masked.resize(width, height);
+        p5.resizeCanvas(width, height);
     };
 };
 
