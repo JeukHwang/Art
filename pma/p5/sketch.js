@@ -23,6 +23,9 @@ const sketch = (p5) => {
         p5.pixelDensity(p5.displayDensity());
 
         image.resize(width, height);
+        
+        image_black = p5.createImage(width, height);
+        image_blur.copy(image, 0, 0, width, height, 0, 0, width, height);
         image_blur = p5.createImage(width, height);
         image_blur.copy(image, 0, 0, width, height, 0, 0, width, height);
         image_blur.filter(p5.BLUR, render.blur);
